@@ -1,3 +1,6 @@
+// Define that you are starting on the first because this could change
+const isFirstPage = true;
+
 page('/', function() {
   page.redirect('/what-is-vegemite');
 });
@@ -19,6 +22,9 @@ page('/:slug', function(context) {
   newMenuItem.classList.add('is-active');
   newPage.classList.add('is-active');
 
+
+  // Move focus to a heading in the new page
+  newPage.querySelector('h2').focus();
 });
 
 page({
